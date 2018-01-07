@@ -15,7 +15,7 @@ has config => singleton 'Cfm::Config';
 sub BUILD {
     my ($self, $args) = @_;
 
-    $self->url($self->config->require_option("url"));
+    $self->url("https://insomnium.rliz.org");
     my $user = $self->config->require_option("user");
     my $pass = $self->config->require_option("pass");
     $self->headers->authorization_basic($user, $pass);
